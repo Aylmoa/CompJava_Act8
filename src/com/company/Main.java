@@ -1,0 +1,40 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        Deck ola= new Deck();
+    ola.mostrar();
+    elegir(ola);
+        System.out.println("Buen dia!");
+    }
+
+    public static void elegir(Deck mazo){
+        Scanner sc= new Scanner(System.in);
+        String cont="";
+        System.out.println("***Para salir introduzca cualquier otro numero que no este establecido***");
+        do{
+            System.out.println("Porfavor escoga que quiere hacer\n1= Mezclar maso. 2= sacar la primera carta." +
+                    "3= Sacar una carta al azar. 4= Repartir 5 cartas.");
+            int eleccion= Integer.parseInt(sc.next());
+        switch (eleccion){
+            case 1:
+                mazo.Shuffle();
+                break;
+            case 2:
+                mazo.head();
+                break;
+            case 3:
+                mazo.pick();
+                break;
+            case 4:
+                mazo.hand();
+                break;
+            default:
+                System.out.println("No escribiste un numero correcto, terminando de repartir");
+                cont="n";
+                break;
+        }
+        }while(cont!="n");
+    }
+}
