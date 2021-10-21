@@ -12,10 +12,10 @@ public class Main {
     public static void elegir(Deck mazo){
         Scanner sc= new Scanner(System.in);
         String cont="";
-        System.out.println("***Para salir introduzca cualquier otro numero que no este establecido***");
+        //System.out.println("***Para salir introduzca cualquier otro numero que no este establecido***");
         do{
             System.out.println("Porfavor escoga que quiere hacer\n1= Mezclar maso. 2= sacar la primera carta." +
-                    "3= Sacar una carta al azar. 4= Repartir 5 cartas.");
+                    "3= Sacar una carta al azar. 4= Repartir 5 cartas. 0= Salir");
             int eleccion= Integer.parseInt(sc.next());
         switch (eleccion){
             case 1:
@@ -30,11 +30,12 @@ public class Main {
             case 4:
                 mazo.hand();
                 break;
-            default:
-                System.out.println("No escribiste un numero correcto, terminando de repartir");
+            case 0:
                 cont="n";
+            default:
+                System.out.println("Opción Invalida, vuelva a escoger");
                 break;
         }
-        }while(cont!="n");
+        }while(cont.equals(""));
     }
 }
