@@ -2,14 +2,19 @@ package com.company;
 import java.util.Scanner;
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Deck ola= new Deck();
     ola.mostrar();
-    elegir(ola);
+
+        try {
+            elegir(ola);
+        } catch ( java.lang.IndexOutOfBoundsException e) {
+            System.out.println("Se acabaron las cartas del deck");
+        }
         System.out.println("Buen dia!");
     }
 
-    public static void elegir(Deck mazo){
+    public static void elegir(Deck mazo) throws Exception {
         Scanner sc= new Scanner(System.in);
         String cont="";
         //System.out.println("***Para salir introduzca cualquier otro numero que no este establecido***");

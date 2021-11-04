@@ -56,19 +56,19 @@ public class Deck {
         Collections.shuffle(cartas);
         System.out.println("Se mezclo el deck");
     }
-    public void head(){//Saca y muestra la primera carta del mazo
+    public void head() throws Exception{//Saca y muestra la primera carta del mazo
         AssistShow(0);
         cartas.remove(0);
         System.out.println("Quedan "+cartas.size()+ " cartas en el Deck");
     }
-    public void pick(){//Saca una carta al ázar
+    public void pick()throws Exception{//Saca una carta al ázar
         Random ra = new Random();
         int num= ra.nextInt(cartas.size());
         AssistShow(num);
         cartas.remove(num);
         System.out.println("Quedan "+cartas.size()+ " cartas en el Deck");
     }
-    public ArrayList  hand(){//Saca las primeras 5 cartas
+    public ArrayList  hand()throws Exception{//Saca las primeras 5 cartas
         ArrayList<Card> Cartas= new ArrayList();
         for (int i = 0; i < 5; i++) {
             AssistShow(i);
